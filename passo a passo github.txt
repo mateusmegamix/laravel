@@ -1,0 +1,12 @@
+1 - git init
+2 - git status
+3 - git add *
+4 - git status
+5 - git commit -m "transferindo para github em 3,2,1..." 
+//pode se usar para arquivos separados sendo assim varios commit.. 
+6 - git remote add origin https://
+7 - git push -u origin master --force
+
+git clone 
+
+gitstatus

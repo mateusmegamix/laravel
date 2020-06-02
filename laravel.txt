@@ -1,0 +1,97 @@
+mkdir app-laravel -> criar pasta
+touch index.php -> criar arquivo
+nano index.php -> edita conteúdo do arquivo
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Para resolver problema ai galera que nao achou o arquivo 
+RegisterController segue abaixo comandos 
+fiz mostrando com novo projeto ai quem ja esta 
+com projeto e so seguir os comandos seguintes :
+C:\laragon\www\
+  composer create-project --prefer-dist laravel/laravel NOME DO PROJETO
+C:\laragon\www\ <NOME DO PROJETO>
+  composer require laravel/ui
+C:\laragon\www\<NOME DO PROJETO>
+  npm install && npm run dev
+C:\laragon\www\ <NOME DO PROJETO>
+  php artisan ui bootstrap --auth
+          ******confirme com yes em todas perguntas e ok
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+php artisan make:controller Admin\TesteConstroller -> cria uma controller
+
+php artisan route:list -> detalhes das rotas
+
+php artisan route:cache -> limpa os caches de rotas que estão rodando
+
+php artisan make:controller ProductController --resource -> cria os metodos com os resources
+
+php artisan view:clear -> limpa os caches da view
+exit
+
+
+//================== Para upload de arquivos =============================================//
+
+diretorio
+laravel config/ filesystem.php trocar o local para public
+
+ls -la public\
+
+php artisan config:clear
+
+php artisan storage:link -> Cria um link simbolico para carregar imagem
+
+ls -la public\ 
+
+//=======================================================================================//
+
+//Seeder para gerar usuario
+
+php artisan -> mostra o menu de comandos do artisan
+
+php artisan migrate -> cria as colunas automatica no banco de dados criado
+
+composer dump-autoload -> mapear os arquivos de migrate
+
+php artisan make:seeder UserTableSeeder -> criando seeders para criar um susario padrão no Banco de Dados
+
+php artisan db:seed -> e irá rodar o seeder no banco de dados
+
+php artisan db:seed --class=ProductsTableSeeder ->definir exatamente qual seeder rodar para não dar erro de duplicata
+
+//==============================================================================================//
+
+//Factory
+//factory para gerar lista de cadastros fake para ter dados no bd
+
+artisan db::seed --class=UsersTableSeeder
+
+php artisan make:factory CategoryFactory --model=Models\User
+
+//chamando assim um factory e criando lista de cadastros fakes de usuarios com nomes e emails aleatórios
+
+//=======================================================================================================//
+
+Eloquent ORM
+
+crio uma model que me gera um migrate e depois eu passo a linha de comando no termianal
+
+php artisan make:model Models\Product -m
+php artisan migrate
+
+criando 100 produtos 
+php artisan make:factory ProductFactory --model=Models\Product
+
+php artisan make:seeder ProductTableSeeder
+lá no php ==factory(Product::class, 100)->create();==
+
+php artisan db::seed --class=ProductsTableSeeder
+
+//========configurações de composer de acordo com a versão do laravel no site do laravel =========================// 
+
+composer required laravel/ui "1.0" --dev -> instla as dependencias do composer
+php artisan ui vue --auth -> trás templates e configurações de autenticação para o laravel
+
+baixar o nodejs e instalar as dependencias com comando npm install
+npm run dev
